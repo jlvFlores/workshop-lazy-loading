@@ -2,17 +2,17 @@ const isIntersecting = (entry) => {
     return entry.isIntersecting;
 };
 
-const accion = (entry) => {
-    const nodo = entry.target;
-    console.log("hola");
+const loadImage = (entry) => {
+    const container = entry.target;
+    const imagen = container.firstChild;
+    const url = imagen.dataset.src;
+    imagen.src = url;
 
-    observer.unobserve(nodo);
+    observer.unobserve(container);
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries
-    .filter(isIntersecting)
-    .forEach(accion);
+    entries.filter(isIntersecting).forEach(loadImage);
 });
 
 export const registerImage = (imagen) => {
