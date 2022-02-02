@@ -5,6 +5,6 @@ module.exports = {
     src: '/_dist_',
   },
   buildOptions: {
-    baseUrl: 'workshop-lazy-loading',
+    baseUrl: '/workshop-lazy-loading',
   },
 }
